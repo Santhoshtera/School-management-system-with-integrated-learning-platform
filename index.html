@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>School Management System</h1>
+        <div class="login-box">
+            <h2>Login</h2>
+            <select id="loginType">
+                <option value="admin">Admin Login</option>
+                <option value="faculty">Faculty Login</option>
+                <option value="parent">Parent Login</option>
+            </select>
+            <input type="text" id="username" placeholder="Username/Student ID">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p id="error-message" class="error"></p>
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+</html> 

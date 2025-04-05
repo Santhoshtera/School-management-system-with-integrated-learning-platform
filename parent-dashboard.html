@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <h2>Parent Dashboard</h2>
+            <ul>
+                <li><a href="#" onclick="showSection('attendance')">Student Attendance</a></li>
+                <li><a href="#" onclick="showSection('marks')">Student Marks</a></li>
+                <li><a href="#" onclick="showSection('videos')">Videos</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <!-- Student Info Banner -->
+            <div id="student-info" class="info-banner"></div>
+
+            <!-- Attendance Section -->
+            <section id="attendance" class="section">
+                <h2>Attendance Record</h2>
+                <div class="chart-container">
+                    <canvas id="attendanceChart"></canvas>
+                </div>
+                <div id="attendance-stats" class="stats-container"></div>
+            </section>
+
+            <!-- Marks Section -->
+            <section id="marks" class="section" style="display: none;">
+                <h2>Academic Performance</h2>
+                <div class="chart-container">
+                    <canvas id="marksChart"></canvas>
+                </div>
+                <div id="marks-status" class="status-container"></div>
+            </section>
+
+            <!-- Videos Section -->
+            <section id="videos" class="section" style="display: none;">
+                <h2>Learning Resources</h2>
+                <div id="video-list" class="video-grid"></div>
+            </section>
+        </main>
+    </div>
+    <script src="js/parent.js"></script>
+</body>
+</html> 

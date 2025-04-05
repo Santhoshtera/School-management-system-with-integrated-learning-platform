@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <h2>Faculty Dashboard</h2>
+            <ul>
+                <li><a href="#" onclick="showSection('faculty-profile')">Dashboard</a></li>
+                <li><a href="#" onclick="showSection('attendance')">Student Attendance</a></li>
+                <li><a href="#" onclick="showSection('marks')">Marks</a></li>
+                <li><a href="#" onclick="showSection('videos')">Videos</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <!-- Faculty Profile Section -->
+            <section id="faculty-profile" class="section">
+                <h2>Faculty Profile</h2>
+                <div id="faculty-info"></div>
+                <button onclick="enableEdit()">Edit</button>
+                <button onclick="saveProfile()" style="display: none;" id="save-profile">Save</button>
+            </section>
+
+            <!-- Attendance Section -->
+            <section id="attendance" class="section" style="display: none;">
+                <h2>Student Attendance</h2>
+                <form id="attendance-form">
+                    <input type="date" id="attendance-date" required>
+                    <select id="student-select" required>
+                        <option value="">Select Student</option>
+                    </select>
+                    <select id="attendance-status" required>
+                        <option value="present">Present</option>
+                        <option value="absent">Absent</option>
+                    </select>
+                    <button type="submit">Save</button>
+                </form>
+                <div id="attendance-list" class="data-list"></div>
+            </section>
+
+            <!-- Marks Section -->
+            <section id="marks" class="section" style="display: none;">
+                <h2>Student Marks</h2>
+                <form id="marks-entry-form">
+                    <select id="marks-student-select" required>
+                        <option value="">Select Student</option>
+                    </select>
+                    <select id="week-select" required>
+                        <option value="">Select Week</option>
+                        <option value="week1">Week 1</option>
+                        <option value="week2">Week 2</option>
+                        <option value="week3">Week 3</option>
+                        <option value="week4">Week 4</option>
+                    </select>
+                    <input type="number" id="marks-value" placeholder="Enter Marks" required min="0" max="100">
+                    <button type="submit">Save</button>
+                </form>
+                <div id="marks-list" class="data-list"></div>
+            </section>
+
+            <!-- Videos Section -->
+            <section id="videos" class="section" style="display: none;">
+                <h2>Video Resources</h2>
+                <form id="video-form">
+                    <input type="text" id="video-title" placeholder="Video Title" required>
+                    <input type="url" id="video-link" placeholder="Google Drive Link" required>
+                    <button type="submit">Add Video</button>
+                </form>
+                <div id="video-list" class="data-list"></div>
+            </section>
+        </main>
+    </div>
+    <script src="js/faculty.js"></script>
+</body>
+</html> 
